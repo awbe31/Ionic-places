@@ -1,0 +1,20 @@
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-title>
+      Google Places
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+ <ion-searchbar [(ngModel)]="autocomplete.query" [showCancelButton]="true"  (ionInput)="updateSearch(item)" placeholder="Search for your address">
+</ion-searchbar>
+<!--<ion-img  src="../../assets/icon/powered_by_google_on_white.png"></ion-img>-->
+
+<ion-list>
+  <button ion-item *ngFor="let item of autocompleteItems"  (click)="chooseItem(item.description)">
+    {{ item.description }}
+  </button>  
+</ion-list>
+</ion-content>
